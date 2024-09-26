@@ -6,7 +6,8 @@ Steps to Run:
 5. Access the web application at http://127.0.0.1:5000/ or localhost
 -----
 # Project Summary: UMT Email Automation Web Application
-![screenshot](screenshot.png)
+![image](https://github.com/user-attachments/assets/ce5bdaf9-8b52-45ed-bd94-658262507918)
+
 ## Overview
 I developed a web application for the 2ID HHBN UMT Office to automate the process of sending mass emails to participants of various events. This project addresses the need for a more efficient system to manage event communications, ensuring timely and organized dissemination of information.
 
