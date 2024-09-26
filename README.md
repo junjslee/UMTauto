@@ -33,7 +33,7 @@ GOOGLE_SHEET_URL=<your_google_sheet_url>
 ENDER_EMAIL=<your_sender_email>
 SENDER_PASSWORD=<your_sender_email_password>
 ```
-3. Configure OAuth credentials: Place your service account JSON key file (<u>service_account.json<\u>) in the root directory.
+3. Configure OAuth credentials: Place your service account JSON key file (<u>service_account.json</u>) in the root directory.
 4. Run the Flask app:
 > python app.py
 5. Access the web application: Open your web browser and go to http://127.0.0.1:5000/ or simply use localhost
