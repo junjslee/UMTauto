@@ -1,12 +1,3 @@
-Steps to Run:
-Steps to Run:
-Steps to Run:
-1. Install dependencies: pip install -r requirements.txt
-2. Set environment variables: Create a .env file with the necessary credentials.
-3. Configure oauth credentiaks key file, which is service_account.json
-4. Run the Flask app: python app.py
-5. Access the web application at http://127.0.0.1:5000/ or localhost
------
 # Project Summary: 2ID UMT Event Management Automation
 ![image](https://github.com/user-attachments/assets/ce5bdaf9-8b52-45ed-bd94-658262507918)
 
@@ -31,13 +22,17 @@ The UMT Email Automation Web Application is designed to automate the process of 
 - **Timeliness**: Ensures timely dissemination of information, improving communication effectiveness.
 - **User-Friendly Interface**: The intuitive web interface, complete with text formatting options and validation, enhances user experience.
 
+-----
+
 # Steps to Run
 1. Install dependencies:
 > pip install requirements.txt
 2. Set environment variables: Create a .env file in the root directory and include the necessary credentials, such as:
-> GOOGLE_SHEET_URL=<your_google_sheet_url>
-> SENDER_EMAIL=<your_sender_email>
-> SENDER_PASSWORD=<your_sender_email_password>
+```
+GOOGLE_SHEET_URL=<your_google_sheet_url>
+ENDER_EMAIL=<your_sender_email>
+SENDER_PASSWORD=<your_sender_email_password>
+```
 3. Configure OAuth credentials: Place your service account JSON key file (<u>service_account.json<\u>) in the root directory.
 4. Run the Flask app:
 > python app.py
