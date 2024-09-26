@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>UMT Email Automation</title>
+    <script src="https://cdn.ckeditor.com/4.22.0/standard/ckeditor.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>UMT Email Automation</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="logout">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+
+        <form method="post" action="/send_emails" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="event_name">Event Name</label>
+                <select class="form-control" id="event_name" name="event_name" required>
+                    <option value="" disabled selected>Select an event</option>
+                    {% for event in events %}
+                        <option value="{{ event }}">{{ event }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="participant_limit">Participant Limit</label>
+                <input type="number" class="form-control" id="participant_limit" name="participant_limit" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Email Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Email Message</label>
+                <textarea class="form-control" id="message" name="message" rows="10" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file_path">Attachment File (optional)</label>
+                <input type="file" class="form-control" id="file_path" name="file_path">
+            </div>
+            <button type="submit" class="btn btn-primary">Send Emails</button>
+            <button type="button" class="btn btn-secondary" id="cancel_button">Cancel</button>
+        </form>
+        <div class="footer">
+            <p>© 2024 U.S. Army 2nd Infantry Division HHBN Unit Ministry Team</p>
+            <p>Developed by Junseong Lee</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        CKEDITOR.replace('message');
+    </script>
+</body>
+</html>
