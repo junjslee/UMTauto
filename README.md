@@ -1,4 +1,4 @@
-# Project Summary: 2ID UMT Event Management Automation
+# 2ID UMT Event Management Automation
 ![image](https://github.com/user-attachments/assets/ce5bdaf9-8b52-45ed-bd94-658262507918)
 
 ## Overview
