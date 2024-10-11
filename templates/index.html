@@ -18,6 +18,8 @@
           {% endif %}
         {% endwith %}
 
+        <a href="{{ url_for('data') }}" class="btn btn-info">Manage Data</a>
+
         <div class="logout">
             <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
         </div>

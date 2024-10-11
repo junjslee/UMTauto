@@ -1,0 +1,57 @@
+/* Styling for the data table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+/* Table header styling */
+thead th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+/* Table body styling */
+tbody td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Adjust padding for action buttons on the right */
+.actions {
+    text-align: right;
+}
+
+/* Make the table responsive */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em;
+    }
+    
+    .actions {
+        text-align: center;
+    }
+}
