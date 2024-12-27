@@ -1,4 +1,4 @@
-# Web Application for 2nd Infantry Division, United States Army 
+# Web Application for 2nd Infantry Division, US Army 
 ![image](https://github.com/user-attachments/assets/ce5bdaf9-8b52-45ed-bd94-658262507918)
 
 ## Overview
