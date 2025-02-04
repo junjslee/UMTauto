@@ -46,9 +46,55 @@ def index():
     df = fetch_google_sheet()
     if df is None:
         flash('Error fetching Google Sheet.', 'danger')
-        return render_template('index.html', events=[])
+        # Pass an empty default message if fetching fails
+        return render_template('index.html', events=[], default_message='')
+    
     events = df["Which event are you signing up for?"].unique().tolist()
-    return render_template('index.html', events=events)
+
+    # Define the default email message with HTML formatting
+    default_message = """
+    <p>Greetings Team,</p>
+
+    <p>We are excited to confirm your participation in the upcoming [Event Name] at [Event Location]. This event promises a day of [describe purpose or key experience], fostering [key takeaways such as teamwork, resilience, or skill development].</p>
+
+    <p>Please review the finalized event details and itinerary below:</p>
+
+    <p><strong>Event Details</strong><br>
+    Event Location: [Event Location]<br>
+    Date: [Event Date]<br>
+    Transportation: [Mode of Transportation]<br>
+    Dress Code: [Appropriate attire based on event type]</p>
+
+    <p><strong>Itinerary</strong><br>
+    [Time]: Accountability and load buses ([Location])<br>
+    [Time]: Departure from [Starting Point]<br>
+    [Time]: Rest stop (if applicable)<br>
+    [Time]: Arrival at [Event Location]<br>
+    [Time]: [Activity 1 - e.g., Training, briefing, free time]<br>
+    [Time]: [Activity 2 - e.g., Lunch, guided session, group challenge]<br>
+    [Time]: Departure from [Event Location]<br>
+    [Time]: Rest stop (if applicable)<br>
+    [Time]: Return to Camp Humphreys</p>
+
+    <p><strong>Important Information</strong><br>
+    Please bring sufficient [currency] for any additional costs such as [list examples like food purchases, etc].</p>
+
+    <p>If you have any questions or concerns leading up to the event, feel free to contact us directly.</p>
+
+    <p>Lastly, please follow us on Instagram(@2id_hhbn_umt) for future events and photos!
+
+    <p>Thank you for your participation. We look forward to an engaging and memorable experience together!</p>
+
+    <p>Warm Regards,<br>
+    2ID HHBN UMT Office</p>
+
+    <p><strong>Point of Contact:</strong><br>
+    Battalion Chaplain: CH (CPT) Lee - jinsup.lee.mil@army.mil / 010-9573-9298<br>
+    Religious Affairs NCOIC: SGT Cohen- stacey.d.cohen2.mil@army.mil / +1 (843) 480-2643<br>
+    Religious Affairs KATUSA: SGT Lee - junseong.lee5.fm@army.mil / 010-7916-4165</p>
+    """
+
+    return render_template('index.html', events=events, default_message=default_message)
 
 @app.route('/logout')
 def logout():
@@ -95,7 +141,7 @@ def send_email(sender_email, sender_password, recipient_email, subject, message,
 
     if file_path:
         filename = file_path.filename
-        file_path.save(filename)
+        file_path.save(f'./attachments/{filename}')
         with open(filename, "rb") as attachment:
             part = MIMEBase("application", "octet-stream")
             part.set_payload(attachment.read())

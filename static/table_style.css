@@ -22,7 +22,6 @@ tbody td {
     padding: 12px 15px;
     border: 1px solid #dddddd;
 }
-
 /* Button styling */
 .btn {
     padding: 10px 15px;
@@ -34,12 +33,10 @@ tbody td {
     text-decoration: none;
     display: inline-block;
 }
-
 /* Hover effect for buttons */
 .btn:hover {
     background-color: #0056b3;
 }
-
 /* Adjust padding for action buttons on the right */
 .actions {
     text-align: right;
