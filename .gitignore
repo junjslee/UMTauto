@@ -1,3 +1,4 @@
 .env
 service_account.json
 .DS_Store
+UMT_REGISTRATION_QR_CODE.png
